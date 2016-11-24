@@ -1,0 +1,31 @@
+- Modul Admin -> Perusahaan -> Struktur Organisasi : Disable dulu.
+
+- Modul PIM -> Gaji Pegawai (tb_karyawan, tb_gaji, td_karyawan_gaji), satu karyawan bisa memiliki beberapa gaji. ONLY SAVE NOW, MORE PROCESS ON FUTURE UPDATES!
+
+- Modul PIM -> Kualifikasi (tb_karyawan, td_karyawan_pengalaman_kerja, td_karyawan_riwayat_pendidikan, td_karyawan_keahlian, td_karyawan_bahasa, td_karyawan_riwayat_jabatan) -> memiliki tampilan seperti Detail tanggungan karyawan.
+
+- AJAX tidak bisa upload bitmap(img, file, dll) gunakan PHP untuk proses upload.
+
+# Patch 14-10-2016
+- Modul GA => tanggal Mulai diganti TMT(Tanggal Mulai Terhitung), Tanggal Akhir diganti Jatuh Tempo. (CLEAR!)
+- Modul GA => penambahan input form untuk pemilihan reminder, reminder akan tampil pada tanggal yang ditentukan tsb hingga tanggal akhir GA tsb. (CLEAR!)
+- Modul GA => penambahan input files yang digunakan untuk upload berkas, yang menggunakan fungsi dari Croppic. (CLEAR!)
+- Notifikasi reminder GA yang muncul sesuai tgl reminder yang akan diinputkan. (CLEAR!)
+
+- Menu Bagian/Jabatan di Modul PIM -> letak bagian ada diatas jabatan. (CLEAR!)
+- Menu Bagian/Jabatan di Modul PIM -> penambahan attachment untuk Berkas Dokumen, ada checkbox['Bukan Karyawan Tetap'] jika diselect akan menampilkan form untuk input data mulai kontrak, habis kontrak, dan detail kontrak.
+- Menu Bagian/Jabatan di Modul PIM -> ada button untuk input kontrak baru, penambahan tabel detail Riwayat Jabatan dan Riwayat Kontrak.
+
+- Menu Gaji di Modul PIM -> gaji bisa dipilih jika detail jabatan sudah diisi.
+
+- Modul KPI => terdapat 2 tabel untuk KPI, tabel master digunakan admin untuk menginputkan data komponen yang digunakan untuk KPI, data komponen KPI meliputi nama_komponen, nilai_min, nilai_max. Yang nantinya tiap komponen tsb akan diambil untuk digunakan input data detail KPI perkaryawan. (CLEAR!)
+- Modul KPI => Buat form pemilihan komponen KPI yang nantinya akan digunakan untuk mengisi Indeks tiap karyawan.
+
+- Modul Cuti => Buat master gaji yang digunakan untuk menyimpan tiap data cuti per periode.
+- Modul Cuti => Form untuk memilih cuti berdasarkan periode, bagian, dan jabatan. yang nantinya tiap jatah gaji akan berkurang.
+
+- Modul Admin => Master Gaji : ditambahkan 1 tabel detail untuk gaji, tabel master digunakan untuk menyimpan master gaji, nama_gaji, min_gaji, max_gaji. Detail gaji digunakan untuk menyimpan data gaji perbagian dan perjabatan. (CLEAR!)
+- Modul Admin => Master User : ditambahkan input untuk link data admin dan data karyawan, yang nantinya akan digunakan karyawan untuk login disistem. Karyawan yang sudah memiliki akun login tidak akan ditampilkan diInput AutoComplete. (CLEAR!)
+
+
+https://www.youtube.com/watch?v=0CrJGgkF954

@@ -1,0 +1,76 @@
+Menu Jabatan :
+- Jika bagian diganti/edit, maka NIK akan berubah tapi tidak masuk kedalam mutasi!
+
+Menu Akun :
+- terdapat form untuk mengubah data login karyawan tersebut, meliputi username dan password
+- tiap mengubah username akan dicek oleh sistem apakah username tersebut sudah dipakai atau belum oleh karyawan lain.
+
+Menu Cuti :
+- form cuti karyawan akan diletakkan dipim sehingga akan memudahkan karyawan untuk mengambil cuti.
+- sedangkan menu approve cuti ada dimaster kalender, yang digunakan admin untuk approve cuti dari karyawan.
+
+Menu Mutasi :
+- Mutasi meliputi, tahun mutasi, bagian yg dimutasi, jabatan!
+- Jika karyawan dimutasi, maka kode bagian pada NIK akan berubah, data karyawan lama akan masuk ke tabel detail mutasi karyawan.
+- Jika hanya jabatan saja yang diubah, maka NIK tidak berubah, data karyawan lama tetap akan masuk kedalam tabel detail mutasi karyawan.
+
+Modul Pim :
+@ Karyawan Kontrak : jika masa kontrak habis ada notifikasi.
+
+Master Jabatan :
+- Semua Bagian : Leader, Co-Leader, Karyawan.
+
+- Tunjangan masa kerja tiap tahun berubah untuk semua karyawan dengan status permanen dan karyawan produksi.
+- Tunjangan jabatan hanya untuk leader dan co-leader saja.
+- perhitungan lembur : (gapok + tunjangan jab + Tunj masa kerja) / 173
+
+Master Kalender Kerja :
+- dibuatkan tabel master
+- kolom : jumlah hari, tahun periode, jumlah jam dalam satu bulan, jumlah jam dalam satu hari.
+
+@ Level admin :
+- Admin : All Act.
+- Sub-Admin : Bisa semua kecuali komponen gaji staff.
+
+@ Cara buat gaji yang fix :
+- Master Gaji disimpan ditabel.
+- Untuk gaji tunjangan masa kerja ada form master, tgl gaji dihitung, value yang ditambahkan, yang diambil dari lama masa kerja dari karyawan tsb.
+- Untuk gaji tunjangan jabatan, terdapat diform master jabatan, yang diisi value untuk jabatan tertentu. sehingga jika jabatan tsb dipilih karyawan tsb lngsg mempunyai komponen gaji tsb.
+
+@ Master komponen BPJS Kesehatan/BPJS Ketenagakerjaan :
+- Buat tabel komponen askes.
+- Dipakai untuk pembuatan komponen dalam pemilihan BPJS Kesehatan/BPJS Ketenagakerjaan.
+
+@ Modul Master :
+- Penambahan modul unit. untuk bagian dan jabatan.
+
+@ Format Kode mutasi : 001/HRD-CAT/SK/XV/2016
+- Jika tahun ganti maka increment awal akan ganti.
+
+@ Modul News : tambah tabel dan form untuk berita kekaryawan.
+
+@ Master Cuti :
+- Master cuti mempunyai range tgl mulai - tgl akhir.
+- Jika sisa cuti karyawan melebihi tgl akhir, maka sisa cuti karyawan tsb hangus.
+
+15-11-2016
+- Mengerjakan revisi dari mutasi. meliputi perubahan kode, penambahan kolom dalam tabel.
+- Mengerjakan modul unit untuk data bagian dan jabatan. modul unit akan digunakan untuk menentukan unit produksi dan staff. tabel unit mempunyai relasi dengan tabel bagian dan jabatan.
+- Selesai pengerjaan CRUD unit, membenahi relasi modul bagian dan jabatan.
+- Alur pembuatan gaji tunjangan jabatan :
+	@INSERT
+	- Admin insert data master jabatan.
+	- Admin mengisi berapa value tunjangan jabatan untuk jabatan tsb.
+	- Setelah itu jika ada karyawan yang memiliki jabatan tersebut.
+	- Maka sistem otomatis menambahkan tunjangan jabatan pada gaji karyawan tersebut.
+	
+	@UPDATE -> jabatan
+	- Admin memilih data jabatan yang akan diedit.
+	- Setelah jabatan diedit, admin mengisi data yang diubah.
+	- Jika komponen gaji juga diubah.
+	- Maka komponen gaji yang ada didalam gaji karyawan juga berubah.
+	
+	@DELETE -> jabatan
+	- Jika admin menghapus data jabatan maka komponen gaji yang ada didalam tabel gaji karyawan juga akan terhapus.
+	
+	24:25

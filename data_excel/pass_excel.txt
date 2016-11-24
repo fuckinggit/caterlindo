@@ -1,0 +1,3 @@
+pass data excel : gaji2016
+
+pass data absensi access : ithITtECH
