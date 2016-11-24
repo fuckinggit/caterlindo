@@ -172,7 +172,7 @@ $p_key = 'kd_karyawan';
 });
 
 function importData() {
-  sUrl="test.php"; features = 'toolbar=no, left=350,top=100, ' + 
+  sUrl="test.php"; features = 'toolbar=no, width=1320,height=660, ' + 
   'directories=no, status=no, menubar=no, ' + 
   'scrollbars=no, resizable=no';
   window.open(sUrl,"winChild",features);
